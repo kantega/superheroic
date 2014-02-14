@@ -13,12 +13,12 @@
 
 <div class="container">
 <div ng-controller="CalcController">
-    <h1>Superhero Calculator</h1>
-
-    If A is <input ng-model="a" placeholder="0" size="5"> superheroes
-    and B is <input ng-model="b" placeholder="0" size="5"> superheroes,
-
-    <p>then:</p>
+    <h1>Superheroic Calculator</h1>
+    <form name="form">
+    If A is <input required ng-model="a" calc-positive-integer  size="5">
+    and B is <input required ng-model="b" calc-positive-integer size="5">
+    </form>
+    <p>, then:</p>
 
     <div>
     <table class="table operations table-condensed table-striped">
@@ -34,13 +34,7 @@
         </tr>
     </table>
     </div>
-    <div calc-square width="a" height="b" class="box">
-
-    </div>
-
-
-
-
+    <calc-square a="a" b="b" class="square" maxWidth="400" maxHeight="400"></calc-square>
 
 </div>
 

@@ -1,21 +1,22 @@
-.box {
+.square {
     border:2px solid red;
     background-color: whitesmoke;
     float:left;
+    box-sizing: content-box;
 }
 
-.boxlabel {
+.squarelabel {
     position:absolute;
     font-size: 14px;
     line-height: 1;
     display: block;
 }
 
-.boxlabel.b {
+.squarelabel.b {
     margin-left: -1em;
 }
 
-.boxlabel.a {
+.squarelabel.a {
     margin-top: -1.5em;
 }
 
@@ -23,5 +24,9 @@
     width: auto;
     float:left;
     margin-right: 3em;
+}
+
+input.ng-invalid.ng-dirty {
+    background-color: lightpink;
 }
 
