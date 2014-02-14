@@ -1,0 +1,21 @@
+.box {
+    border:2px solid red;
+}
+
+.boxlabel {
+    position:absolute;
+    font-size: 14px;
+    line-height: 1;
+    display: block;
+}
+
+.boxlabel.b {
+    margin-left: -1em;
+}
+
+.boxlabel.a {
+    margin-top: -1.5em;
+}
+
+
+

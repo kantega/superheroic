@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../webjars/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../webjars/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="task1.css">
+
+</head>
+<body ng-app="CalcApp">
+
+
+<div class="container">
+<div ng-controller="CalcController">
+    <h1>Superhero Calculator</h1>
+    <p>
+    If A is <input ng-model="a" class="form-component" placeholder="0" style="">
+    and B is <input ng-model="b" class="form-component" placeholder="0">
+    </p>
+
+    <p>then:</p>
+    <table class="table table-condensed table-striped" style="width: auto">
+        <thead>
+            <tr>
+                <th>Operation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="operation in operations">
+            <td>{{operation.name}}:</td>
+            <td class="text-right">{{operation.operator(a,b) | number:2}}</td>
+        </tr>
+    </table>
+
+
+    <div calc-square width="a" height="b" class="box">
+
+    </div>
+
+</div>
+
+</div>
+
+<script src="../webjars/angularjs/1.2.12/angular.min.js"></script>
+<script src="task1.js"></script>
+</body>
+</html>
