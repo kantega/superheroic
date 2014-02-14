@@ -1,5 +1,7 @@
 .box {
     border:2px solid red;
+    background-color: whitesmoke;
+    float:left;
 }
 
 .boxlabel {
@@ -17,5 +19,9 @@
     margin-top: -1.5em;
 }
 
-
+.table.operations {
+    width: auto;
+    float:left;
+    margin-right: 3em;
+}
 

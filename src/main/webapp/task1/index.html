@@ -14,29 +14,33 @@
 <div class="container">
 <div ng-controller="CalcController">
     <h1>Superhero Calculator</h1>
-    <p>
-    If A is <input ng-model="a" class="form-component" placeholder="0" style="">
-    and B is <input ng-model="b" class="form-component" placeholder="0">
-    </p>
+
+    If A is <input ng-model="a" placeholder="0" size="5"> superheroes
+    and B is <input ng-model="b" placeholder="0" size="5"> superheroes,
 
     <p>then:</p>
-    <table class="table table-condensed table-striped" style="width: auto">
-        <thead>
-            <tr>
-                <th>Operation</th>
-                <th>Result</th>
-            </tr>
-        </thead>
+
+    <div>
+    <table class="table operations table-condensed table-striped">
+
+        <tr>
+            <th>Operation</th>
+            <th>Result</th>
+        </tr>
         <tr ng-repeat="operation in operations">
             <td>{{operation.name}}:</td>
             <td class="text-right">{{operation.operator(a,b) | number:2}}</td>
+
         </tr>
     </table>
-
-
+    </div>
     <div calc-square width="a" height="b" class="box">
 
     </div>
+
+
+
+
 
 </div>
 
