@@ -1,0 +1,189 @@
+<style>
+    .results .alert {
+        display: none;
+    }
+
+
+</style>
+
+<script type="text/html" id="testResults">
+    <div class="panel panel-default results" style="position: fixed;bottom:0; right:20px" id="testResultsApp">
+        <div class="panel-heading">
+            <div class="panel-title">Test results:</div>
+        </div>
+        <div class="panel-body" id="resultBody">
+            <div>
+                <div class="alert alert-success js" >
+                    <b>Yes!</b> AngularJS <span id="angVersion"></span> is added!
+
+                </div>
+                <div class="alert alert-danger js">
+                    <p>
+                        <b>Fail!</b> You need to add an AngularJS &lt;script&gt; tag to this page!
+                    </p>
+                    <p>Use <a target="_blank" href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js">Google's CDN</a> or the <a target="_blank" href="/webjars/angularjs/1.2.13/angular.js"> this app's bundled angular.js</a></p>
+                </div>
+            </div>
+            <div>
+                <div class="alert alert-success ngApp" >
+                    <b>Yes!</b> You've added <span class="label label-success">ng-app</span> !
+                </div>
+                <div class="alert alert-danger ngApp">
+                    <b>Fail!</b> You need to add <a href="http://docs.angularjs.org/api/ng/directive/ngApp" target="_blank">ng-app</a> to the page!
+                </div>
+            </div>
+
+            <div>
+                <div class="alert alert-success ngModule" >
+                    <b>Yes!</b> You've added the module <span class="label label-success">myApp</span>!
+                </div>
+                <div class="alert alert-danger ngModule">
+                    <b>Fail!</b> You must add an angular module named <span class="label label-success">myApp</span>!
+                </div>
+            </div>
+            <div>
+                <div class="alert alert-success ngController" >
+                    <b>Yes!</b> You've added <span class="label label-success">ng-controller</span> to the page!
+                </div>
+                <div class="alert alert-danger ngController">
+                    <b>Fail!</b> Expected to find <span class="label label-success">ng-controller</span> on the page!!
+                </div>
+            </div>
+            <div>
+                <div class="alert alert-success heroes" >
+                    <b>Yes!</b> Your controller added an an array named <span class="label label-success">heroes</span> to its scope!
+                </div>
+                <div class="alert alert-danger heroes">
+                    <b>Fail!</b> Your controller should add an an array named <span class="label label-success">heroes</span> its
+                    <a href="http://docs.angularjs.org/guide/scope">scope</a>!
+                </div>
+            </div>
+
+            <div>
+                <div class="alert alert-success knownHeroes" >
+                    <b>Yes!</b> Those are some great superheroes you have in your scope!
+                </div>
+                <div class="alert alert-danger knownHeroes">
+                    <b>Fail!</b> You need at least tree <a href="http://www.superherodb.com/characters/">know superhero names</a> in
+                    your <span class="label label-success">heroes</span> array
+                </div>
+            </div>
+
+            <div>
+                <div class="alert alert-success foundHeroes" >
+                    <p>
+                        <b>Yes!</b> All your superheroes are listed!
+                    </p>
+                    <p>
+                        You have now at AngularJS Superhero Level: <b>Superman(dog)</b>
+                    </p>
+
+                    <iframe style="margin-top:10px" width="560" height="315" src="//www.youtube.com/embed/Hdmm1UaX8mw" frameborder="0" allowfullscreen></iframe>
+
+
+                </div>
+                <div class="alert alert-danger foundHeroes">
+                    <b>Fail!</b> The page should list all your superheroes in an <a href="http://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</script>
+<script>
+
+    (function() {
+        
+        var heroeNames = ["Abe Sapien","Abin Sur","Abomination","Abraxas","Adam Monroe","Adam Strange","Agent 13","Agent Zero","Air-Walker","Alan Scott","Alex Woolsly","Alfred Pennyworth","Allan Quatermain","Amazo","Ammo","Ando Masahashi","Angel","Angel Salvadore","Angela","Animal Man","Annihilus","Ant-Man","Ant-Man II","Anti-Monitor","Anti-Spawn","Anti-Venom","Apocalypse","Aquababy","Aqualad","Aquaman","Arachne","Archangel","Arclight","Ares","Ariel","Armor","Arsenal","Astro Boy","Atlas","Atom","Atom Girl","Atom I","Atom II","Atom III","Atom IV","Aurora","Azazel","Azrael","Aztar","Banshee","Bantam","Batgirl I","Batgirl II","Batgirl III","Batgirl IV","Batgirl V","Batgirl VI","Batman","Batman II","Battlestar","Beak","Beast","Beast Boy","Beetle","Ben 10","Beta Ray Bill","Beyonder","Big Barda","Big Daddy","Big Man","Bill Harken","Billy Kincaid","Binary","Bird-Brain","Bird-Man","Bird-Man II","Birdman","Bishop","Bizarro","Black Abbott","Black Adam","Black Bolt","Black Canary I","Black Canary II","Black Cat","Black Goliath","Black Knight III","Black Lightning","Black Mamba","Black Panther","Black Widow","Black Widow II","Blackout","Blackwing","Blackwulf","Blade","Blaquesmith","Bling!","Blink","Blizzard","Blizzard I","Blizzard II","Blob","Bloodaxe","Bloodhawk","Bloodwraith","Blue Beetle","Blue Beetle I","Blue Beetle II","Blue Beetle III","Bolt","Bomb Queen","Boom Boom","Boomer","Booster Gold","Box","Box III","Box IV","Brainiac","Brainiac 5","Brother Voodoo","Bullseye","Bumblebee","Bumbleboy","Bushido","Callisto","Cameron Hicks","Cannonball","Captain America","Captain Atom","Captain Britain","Captain Epic","Captain Mar-vell","Captain Marvel","Captain Marvel II","Captain Planet","Captain Universe","Carnage","Cat","Cat II","Catwoman","Cecilia Reyes","Century","Cerebra","Chamber","Chameleon","Changeling","Cheetah I","Cheetah II","Cheetah III","Chromos","Chuck Norris","Claire Bennet","Clea","Cloak","Cogliostro","Colin Wagner","Colossal Boy","Colossus","Corsair","Crimson Crusader","Crimson Dynamo I","Crystal","Curse","Cy-Gor","Cyborg","Cyborg Superman","Cyclops","Cypher","DL Hawkins","Danny Cooper","Daphne Powell","Daredevil","Darkhawk","Darkman","Darkseid","Darkside","Darkstar","Dash","Dazzler","Deadman","Deadpool","Deadshot","Deathlok","Deathstroke","Demogoblin","Destroyer","Doc Samson","Doctor Doom","Doctor Doom II","Doctor Fate","Doctor Octopus","Doctor Strange","Domino","Donna Troy","Doomsday","Doppelganger","Dormammu","Dr Manhattan","ERG-1","Elastigirl","Electro","Elektra","Elle Bishop","Elongated Man","Emma Frost","Energy","Evilhawk","Exodus","Falcon","Fallen One II","Faora","Feral","Fighting Spirit","Fin Fang Foom","Firebird","Firelord","Firestar","Firestorm","Fixer","Flash Gordon","Flash I","Flash II","Flash III","Flash IV","Forge","Franklin Richards","Franklin Storm","Frenzy","Frigga","Gambit","Garbage Man","Gary Bell","General Zod","Genesis","Ghost Rider","Ghost Rider II","Giant-Man","Giant-Man II","Giganta","Goblin Queen","Gog","Goku","Goliath","Goliath II","Goliath III","Goliath IV","Granny Goodness","Gravity","Green Arrow","Green Goblin","Green Goblin II","Green Goblin III","Green Goblin IV","Guardian","Guy Gardner","Hancock","Harley Quinn","Havok","Hawk","Hawkeye","Hawkeye II","Hawkgirl","Hawkman","Hawkwoman I","Hawkwoman II","Hawkwoman III","Hellboy","Hellcat","Hellstorm","Hercules","Hiro Nakamura","Hit-Girl","Hobgoblin","Hollow","Hope Summers","Howard the Duck","Hulk","Human Torch","Huntress","Husk","Hydro-Man","Hyperion","Impulse","Invisible Woman","Iron Fist","Iron Man","Iron Monger","Ironman","Isis","JJ Powell","Jack of Hearts","Jack-jack","Jean Grey","Jennifer Kale","Jessica Sanders","Jigsaw","Jim Powell","Johann Krauss","John Stewart","John Wraith","Joker","Jolt","Jubilee","Juggernaut","Junkpile","Justice","Kevin 11","Kick-Ass","Kid Flash","Kid Flash II","Killer Croc","Kilowog","Kingpin","Kitty Pride","Klaw","Kool-Aid Man","Kraven II","Kraven the Hunter","Krypto","Lady Deathstrike","Leader","Leech","Lex Luthor","Light Lass","Lightning Lad","Lightning Lord","Living Brain","Liz Sherman","Lizard","Lobo","Loki","Longshot","Luke Cage","Luke Campbell","Luna","Lyja","Machine Man","Magneto","Magog","Magus","Man-Bat","Man-Thing","Man-Wolf","Mandarin","Martian Manhunter","Marvel Girl","Master Brood","Master Chief","Match","Matt Parkman","Maverick","Maxima","Maya Herrera","Medusa","Meltdown","Mephisto","Mera","Metallo","Metamorpho","Meteorite","Metron","Micah Sanders","Micro Lad","Mimic","Minna Murray","Misfit","Miss Martian","Mister Fantastic","Mister Freeze","Mister Mxyzptlk","Mister Sinister","Mogo","Mohinder Suresh","Moloch","Molten Man","Monarch","Monica Dawson","Moon Knight","Moonstone","Morlun","Morph","Moses Magnum","Mr Incredible","Ms Marvel","Ms Marvel II","Multiple Man","Mysterio I","Mystique","Namora","Namorita","Naruto Uzumaki","Nathan Petrelli","Nick Fury","Nightcrawler","Nightwing","Niki Sanders","Nina Theroux","Nite Owl II","Northstar","Nova","Omega Red","Omniscient","Onslaught","Oracle (DC)","Osiris","Overtkill","Penance I","Penance II","Penguin","Peter Petrelli","Phantom","Phantom Girl","Phoenix","Plastic Lad","Plastic Man","Plastique","Poison Ivy","Power Girl","Power Man","Professor X","Proto-Goblin","Psylocke","Punisher","Pyro","Question","Quicksilver","Quill","Rachel Pirzad","Raven","Razor-Fist II","Red Arrow","Red Hood","Red Hulk","Red Mist","Red Robin","Red Skull","Red Tornado","Redeemer II","Redeemer III","Renata Soliz","Rhino","Rick Flag","Riddler","Ripcord","Robin I","Robin II","Robin III","Robin V","Rogue","Ronin","Rorschach","Sage","Sandman","Sasquatch","Savage Dragon","Scarecrow","Scarlet Spider","Scarlet Spider II","Scarlet Witch","Scorpia","Scorpion","Sentry","Shadow King","Shang-Chi","Shatterstar","She-Hulk","She-Thing","Shocker","Shriek","Shrinking Violet","Sif","Silk Spectre I","Silk Spectre II","Silver Surfer","Silverclaw","Sinestro","Siren","Siren II","Siryn","Skaar","Snowbird","Sobek","Songbird","Space Ghost","Spawn","Spectre","Speedball","Speedy","Spider-Carnage","Spider-Girl","Spider-Man","Spider-Woman","Spider-Woman II","Spider-Woman III","Spider-Woman IV","Spiderman","Spyke","Stacy X","Stardust","Starfire","Stargirl","Steel","Stephanie Powell","Storm","Sub-Mariner","Sunspot","Super Moos","Superboy","Superboy-Prime","Supergirl","Superman","Swamp Thing","Sylar","Synch","Thanos","The Cape","The Comedian","Thing","Thor","Thor Girl","Thunderbird","Thunderbird II","Thunderbird III","Thunderstrike","Thundra","Tiger Shark","Tigra","Tinkerer","Titan","Toad","Toxin","Tracy Strauss","Trickster","Triplicate Girl","Two-Face","Ultron","Utgard-Loki","Valerie Hart","Valkyrie","Vanisher","Venom","Venom II","Venom III","Vertigo II","Vindicator","Vindicator II","Violator","Violet","Vision","Vision II","Vulcan","Vulture","War Machine","Warbird","Warlock","Warp","Warpath","Wasp","Watcher","Weapon XI","White Queen","Wildfire","Willis Stryker","Wiz Kid","Wolfsbane","Wolverine","Wonder Girl","Wonder Man","Wonder Woman","Wondra","Wyatt Wingfoot","X-Man","Yellowjacket","Yellowjacket II","Ymir","Zoom"]
+
+        var heroes = {}
+
+        for(var n in heroeNames) {
+            heroes[heroeNames[n].toLowerCase()] = heroeNames[n];
+        }
+        var results = document.createElement("div");
+        results.innerHTML = document.querySelector("#testResults").innerHTML;
+        document.body.appendChild(results)
+
+        var result = [];
+
+        if("angular" in window) {
+            result.push({name: "js", result:true});
+            document.querySelector("#angVersion").textContent = angular.version.full;
+        } else {
+            result.push({name: "js", result:false});
+        }
+
+        result.push({name:"ngApp", result: document.querySelector("*[ng-app]") != null})
+
+        var input = document.querySelector("input[ng-model]");
+
+        if(document.querySelector("*[ng-controller]") != null) {
+            result.push({name: "ngController", result:true});
+            setTimeout(function() {
+                var scope = angular.element(document.querySelector("*[ng-controller]")).scope();
+
+
+                console.log("Scope is: " + (scope.heroes instanceof Array));
+
+                if("heroes" in scope && scope.heroes instanceof Array) {
+                    document.querySelector(".alert-success.heroes" ).style.display = "block";
+
+                    var known = 0;
+                    for(var i = 0; i < scope.heroes.length; i++) {
+                        if(heroes.hasOwnProperty(scope.heroes[i].toLowerCase())) {
+                            known++;
+                        }
+                    }
+
+
+                    if(known >= 3) {
+                        document.querySelector(".alert-success.knownHeroes" ).style.display = "block";
+
+                        var found = 0;
+                        for(var i = 0; i < scope.heroes.length; i++) {
+                            console.log("F_ " +document.querySelector(".container").innerHTML.indexOf(scope.heroes[i]));
+                            if(document.querySelector(".container").innerHTML.indexOf(scope.heroes[i]) != -1) {
+                                found++;
+                            }
+                        }
+
+                        if(found == scope.heroes.length) {
+                            document.querySelector(".alert-success.foundHeroes" ).style.display = "block";
+                        } else {
+                            document.querySelector(".alert-danger.foundHeroes" ).style.display = "block";
+                        }
+
+                    } else {
+                        document.querySelector(".alert-danger.knownHeroes" ).style.display = "block";
+                    }
+
+
+                } else {
+                    document.querySelector(".alert-danger.heroes" ).style.display = "block";
+                }
+
+
+
+            }, 20)
+
+        } else {
+            result.push({name: "ngController", result:false});
+        }
+
+        for(var i in result) {
+            var name = result[i].name;
+            if(result[i].result) {
+                document.querySelector(".alert-success." + name).style.display = "block";
+            } else {
+                document.querySelector(".alert-danger." + name).style.display = "block";
+                break;
+            }
+        }
+
+
+
+    })();
+
+
+</script>

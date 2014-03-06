@@ -39,7 +39,7 @@ public class TestFilter implements Filter {
                 String content = new String(wrapper.toByteArray(), "utf-8");
                 String test = IOUtils.toString(testFile.toURI().toURL(), "utf-8");
                 content = content.replace("</body>", test +"</body>");
-                resp.getOutputStream().print(content +"</body>");
+                resp.getOutputStream().print(content);
             }
         } else {
             filterChain.doFilter(req, resp);
