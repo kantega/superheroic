@@ -48,7 +48,7 @@ angular.module("CalcApp", [])
                 a: "=a",
                 b: "=b"
             },
-            template: "<div class='squarelabel a' style='margin-left:{{width/2}}px'>a:</div> <div class='squarelabel b' style='margin-top:{{height/2-7}}px'>b</div>",
+            template: "<div class='squarelabel a' style='margin-left:{{width/2}}px'>a</div> <div class='squarelabel b' style='margin-top:{{height/2-7}}px'>b</div>",
 
             link: function (scope, elem, attrs) {
 

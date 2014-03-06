@@ -1,0 +1,145 @@
+<style>
+    .alert {
+        display: none;
+    }
+
+
+</style>
+
+<script type="text/html" id="testResults">
+    <div class="panel panel-default" style="position: fixed;bottom:0; right:20px">
+        <div class="panel-heading">
+            <div class="panel-title">Test results:</div>
+        </div>
+        <div class="panel-body" id="resultBody">
+            <div>
+                <div class="alert alert-success js" >
+                    <b>Yes!</b> AngularJS <span id="angVersion"></span> is added to the page!
+                </div>
+                <div class="alert alert-danger js">
+                    <b>Fail!</b> You need to add an AngularJS &lt;script&gt; tag to this page!
+                </div>
+            </div>
+            <div>
+                <div class="alert alert-success ngApp" >
+                    <b>Yes!</b> You've added <span class="label label-success">ng-app</span> !
+                </div>
+                <div class="alert alert-danger ngApp">
+                    <b>Fail!</b> You need to add ng-app to the page!
+                </div>
+            </div>
+            <div>
+                <div class="alert alert-success ngModel" >
+                    <b>Yes!</b> You've added <span class="label label-success">ng-model</span> to the input field!
+                </div>
+                <div class="alert alert-danger ngModel">
+                    <b>Fail!</b> You need to use ng-model on the input field.
+                </div>
+            </div>
+            <div>
+                <div class="alert alert-success ngBinding" >
+                    <b>Yes!</b> You've added the binding <code class="expr" ng-non-bindable></code> to the page!
+                </div>
+                <div class="alert alert-danger ngBinding">
+                    <b>Fail!</b> Expected to find expression <code class="expr" ng-non-bindable></code> on the page!
+                </div>
+            </div>
+
+            <div class="alert alert-danger nothing-typed">
+                <b>Fail!</b> You have not typed anything yet!
+            </div>
+
+            <div>
+                <div class="alert alert-success found-text" >
+                    <p>
+                        <b>Congratulations!</b> Your input text was found on the page!
+                    </p>
+                    <p>
+                        You are now at AngularJS SuperHero Level: <b>BananaMan</b>!
+                    </p>
+
+                    <iframe style="margin: 10px" width="420" height="315" src="//www.youtube.com/embed/Hq2KXudEjkI" frameborder="0" allowfullscreen></iframe>
+
+                    <p>
+                        Alright, now <a href="../search/search.html">take me to the next task</a>
+                    </p>
+                </div>
+                <div class="alert alert-danger found-text">
+                    <b>Fail!</b> Expected to find input text on the page!
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</script>
+<script>
+
+    (function() {
+        var results = document.createElement("div");
+        results.innerHTML = document.querySelector("#testResults").innerHTML;
+        document.querySelector(".container").appendChild(results)
+
+        var result = [];
+
+        if("angular" in window) {
+            result.push({name: "js", result:true});
+            document.querySelector("#angVersion").textContent = angular.version.full;
+        } else {
+            result.push({name: "js", result:false});
+        }
+
+        result.push({name:"ngApp", result: document.querySelector("*[ng-app]") != null})
+
+        var input = document.querySelector("input[ng-model]");
+
+        if(input != null) {
+            result.push({name:"ngModel", result: true})
+
+            var expr = input.getAttribute("ng-model");
+
+            if(document.body.innerHTML.indexOf("{{" + expr +"}}") != -1) {
+                result.push({name:"ngBinding", result: true});
+
+                document.querySelector(".alert-danger.nothing-typed").style.display = "block";
+
+                input.addEventListener("keyup", function() {
+                    document.querySelector(".alert-danger.nothing-typed").style.display = "none";
+
+                    if(document.body.textContent.indexOf(input.value) != -1) {
+                        document.querySelector(".alert-success.found-text").style.display = "block";
+                    } else {
+                        document.querySelector(".alert-danger.found-text").style.display = "block";
+                    }
+
+                })
+            } else {
+                result.push({name:"ngBinding", result: false});
+            }
+
+            var exprs = document.querySelectorAll(".expr");
+
+            console.log("Updating " + exprs.length)
+            for(var i = 0; i < exprs.length; i++) {
+                exprs[i].textContent = "{{" + expr +"}}";
+            }
+
+
+
+        } else {
+            result.push({name:"ngModel", result: false})
+        }
+
+        for(var i in result) {
+            var name = result[i].name;
+            if(result[i].result) {
+                document.querySelector(".alert-success." + name).style.display = "block";
+            } else {
+                document.querySelector(".alert-danger." + name).style.display = "block";
+                break;
+            }
+        }
+
+    })();
+
+</script>
