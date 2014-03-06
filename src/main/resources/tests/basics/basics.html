@@ -1,5 +1,5 @@
 <style>
-    .alert {
+    .results .alert {
         display: none;
     }
 
@@ -7,17 +7,21 @@
 </style>
 
 <script type="text/html" id="testResults">
-    <div class="panel panel-default" style="position: fixed;bottom:0; right:20px">
+    <div class="panel panel-default results" style="position: fixed;bottom:0; right:20px">
         <div class="panel-heading">
             <div class="panel-title">Test results:</div>
         </div>
         <div class="panel-body" id="resultBody">
             <div>
                 <div class="alert alert-success js" >
-                    <b>Yes!</b> AngularJS <span id="angVersion"></span> is added to the page!
+                    <b>Yes!</b> AngularJS <span id="angVersion"></span> is added!
+
                 </div>
                 <div class="alert alert-danger js">
-                    <b>Fail!</b> You need to add an AngularJS &lt;script&gt; tag to this page!
+                    <p>
+                        <b>Fail!</b> You need to add an AngularJS &lt;script&gt; tag to this page!
+                    </p>
+                    <p>Use <a target="_blank" href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js">Google's CDN</a> or the <a target="_blank" href="/webjars/angularjs/1.2.13/angular.js"> this app's bundled angular.js</a></p>
                 </div>
             </div>
             <div>
@@ -25,7 +29,7 @@
                     <b>Yes!</b> You've added <span class="label label-success">ng-app</span> !
                 </div>
                 <div class="alert alert-danger ngApp">
-                    <b>Fail!</b> You need to add ng-app to the page!
+                    <b>Fail!</b> You need to add <a href="http://docs.angularjs.org/api/ng/directive/ngApp" target="_blank">ng-app</a> to the page!
                 </div>
             </div>
             <div>
@@ -33,7 +37,7 @@
                     <b>Yes!</b> You've added <span class="label label-success">ng-model</span> to the input field!
                 </div>
                 <div class="alert alert-danger ngModel">
-                    <b>Fail!</b> You need to use ng-model on the input field.
+                    <b>Fail!</b> You need to use <a href="http://docs.angularjs.org/api/ng/directive/ngModel" target="_blank">ng-model</a> on the input field.
                 </div>
             </div>
             <div>
@@ -50,7 +54,7 @@
             </div>
 
             <div>
-                <div class="alert alert-success found-text" >
+                <div class="alert alert-info found-text" >
                     <p>
                         <b>Congratulations!</b> Your input text was found on the page!
                     </p>
@@ -107,7 +111,7 @@
                     document.querySelector(".alert-danger.nothing-typed").style.display = "none";
 
                     if(document.body.textContent.indexOf(input.value) != -1) {
-                        document.querySelector(".alert-success.found-text").style.display = "block";
+                        document.querySelector(".alert-info.found-text").style.display = "block";
                     } else {
                         document.querySelector(".alert-danger.found-text").style.display = "block";
                     }
