@@ -26,8 +26,10 @@ public class TestFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
 
         String uri = req.getRequestURI();
+        String path = uri.substring(0, uri.lastIndexOf("/")+1);
+        String name = uri.substring(uri.lastIndexOf("/")+1);
 
-        File testFile = new File("src/main/resources/tests" + uri);
+        File testFile = new File("src/main/resources/tests" + path + "test-" + name);
         if(testFile.exists() && testFile.isFile()) {
             Wrapper wrapper = new Wrapper(resp);
             filterChain.doFilter(req, wrapper);
