@@ -1,0 +1,133 @@
+<style>
+    .results .alert {
+        display: none;
+    }
+
+
+</style>
+
+<script type="text/html" id="testResults">
+    <div class="panel panel-default results" style="position: fixed;bottom:0; right:20px" id="testResultsApp">
+        <div class="panel-heading">
+            <div class="panel-title">Test results:</div>
+        </div>
+        <div class="panel-body" id="resultBody">
+
+            <div class="alert alert-success http">
+                <b>Yes!</b> Your page does an HTTP request!
+            </div>
+            <div class="alert alert-danger http">
+                <b>Fail!</b> Your page does not make an HTTP request!
+            </div>
+            <div class="alert alert-danger manyhttp">
+                <b>Fail!</b> Your page makes more than one http request
+            </div>
+            <div class="alert alert-danger notget">
+                <b>Fail!</b> Your HTTP request should use HTTP GET
+            </div>
+            <div class="alert alert-danger wrongurl">
+                <b>Fail!</b> Your HTTP request should fetch the URL <code>superheroes.json</code>
+            </div>
+
+            <div class="alert alert-success allheroes">
+                <p><b>Congratulations!</b> Your list has 100 superheroes!</p>
+
+                <p>
+                    You have reached AngularJS Superhero Level of : <b>Supermandog SORA</b>!
+                </p>
+                <iframe style="margin: 20px" width="420" height="315" src="//www.youtube.com/embed/Hdmm1UaX8mw" frameborder="0" allowfullscreen></iframe>
+
+
+                <p>
+                    Thank you, now <a href="../forms/forms.html">take me to the next level</a>
+                </p>
+            </div>
+
+            <div class="alert alert-danger allheroes">
+                <b>Fail!</b> Your list does not show all 100 superheroes!
+            </div>
+        </div>
+
+    </div>
+</script>
+<script>
+
+    (function () {
+
+        var results = document.createElement("div");
+        results.innerHTML = document.querySelector("#testResults").innerHTML;
+        document.body.appendChild(results)
+
+        function fail(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "block";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "none";
+            }
+        }
+
+        function success(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "none";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "block";
+            }
+        }
+
+
+
+        var requests = [];
+
+        angular.module("myApp")
+                .config(function ($httpProvider) {
+                    $httpProvider.interceptors.push(function ($q) {
+                        return {
+                            'request': function (config) {
+                                console.log("On request " + config.url);
+
+                                requests.push(config);
+
+                                if( requests.length == 1 ) {
+                                    success("http")
+
+                                    if(config.url !== "superheroes.json") {
+                                        fail("wrongurl");
+                                    }
+
+                                    if(config.method!== "GET") {
+                                        fail("notget");
+                                    }
+
+                                } else if (requests.length > 1) {
+                                    fail("manyhttp");
+                                }
+                                return config || $q.when(config);
+                            },
+                            'response': function(response) {
+                                setTimeout(function() {
+                                    var numHeroes = document.querySelectorAll(".herolist li").length;
+                                    if(numHeroes == 100) {
+                                        success("allheroes");
+                                    } else {
+                                        fail("allheroes");
+                                    }
+
+                                }, 200)
+                                return response;
+                            }
+                        };
+                    });
+                }) ;
+
+        document.querySelector(".alert-danger.http" ).style.display = "block";
+
+    })();
+
+
+</script>

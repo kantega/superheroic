@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.1.1/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/superheroes.css">
+    <link rel="stylesheet" href="http.css">
+</head>
+
+<body ng-app="myApp">
+
+<div class="container" >
+
+
+    <h1>GETting data from the server</h1>
+
+    <p>
+        This page contains a hard-coded HTML list of Superheroes. That's not very super!
+    </p>
+    <p>
+        Your goal is to improve the list fetching a <a href="superheroes.json">list of super heroes</a> in JSON format
+        from the server, add the list the scope of a controller and list them out using what you learned in the previous task.
+    </p>
+    <p class="alert alert-success">
+        Hint: Check out Angular's <a href="http://docs.angularjs.org/api/ng/service/$http">$http</a> service!
+    </p>
+
+
+    <ul class="herolist" ng-controller="HeroesController">
+        <li ng-repeat="hero in heroes">
+            <img src="{{hero.image}}">
+            <h3>{{hero.name}}</h3>
+        </li>
+    </ul>
+
+
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+<script src="http.js"></script>
+</body>
+</html>

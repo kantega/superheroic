@@ -1,0 +1,17 @@
+.herolist {
+    margin:0;
+    padding:0;
+}
+.herolist li {
+    display: block;
+    list-style: none;
+    width: 100%;
+    clear: both;
+}
+
+.herolist li img {
+    float: left;
+    width: 30%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
