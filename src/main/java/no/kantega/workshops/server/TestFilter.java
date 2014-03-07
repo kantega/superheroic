@@ -30,7 +30,7 @@ public class TestFilter implements Filter {
         String name = uri.substring(uri.lastIndexOf("/")+1);
 
         File testFile = new File("src/main/resources/tests" + path + "test-" + name);
-        if(testFile.exists() && testFile.isFile()) {
+        if(req.getParameter("skiptest") == null && testFile.exists() && testFile.isFile()) {
             Wrapper wrapper = new Wrapper(resp);
             filterChain.doFilter(req, wrapper);
             resp.flushBuffer();
