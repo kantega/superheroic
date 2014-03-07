@@ -1,0 +1,207 @@
+<style>
+    .results .alert {
+        display: none;
+    }
+
+
+</style>
+
+<script type="text/html" id="testResults">
+    <div class="panel panel-default results" style="position: fixed;bottom:0; right:20px" id="testResultsApp">
+        <div class="panel-heading">
+            <div class="panel-title">Test results:</div>
+        </div>
+        <div class="panel-body" id="resultBody">
+
+            <div class="alert alert-success namebound">
+                <b>Yes!</b> <code>name</code> input is bound to <code>registration.name</code>
+            </div>
+
+            <div class="alert alert-danger namebound">
+                <b>Fail!</b> <code>name</code> input is not bound to <code>registration.name</code>
+            </div>
+
+            <div class="alert alert-success agebound">
+                <b>Yes!</b> <code>age</code> input is bound to <code>registration.age</code>
+            </div>
+
+            <div class="alert alert-danger agebound">
+                <b>Fail!</b> <code>age</code> input is not bound to <code>registration.age</code>
+            </div>
+
+            <div class="alert alert-success shouldbedisabled">
+                <b>Yes!</b> Register button is disabled when the form is invalid</code>
+            </div>
+
+            <div class="alert alert-danger shouldbedisabled">
+                <b>Fail!</b> Register button should be disabled when the form is invalid</code>
+            </div>
+
+            <div class="alert alert-success shouldhideninja">
+                <b>Yes!</b> Mutant Ninja Turtle checkbox is hidden when age is not < 20
+            </div>
+
+            <div class="alert alert-danger shouldhideninja">
+                <b>Fail!</b> Mutant Ninja Turtle checkbox should should be hidden when age is not < 20
+            </div>
+
+            <div class="alert alert-success allheroes">
+                <p><b>Congratulations!</b> Your list has 100 superheroes!</p>
+
+                <p>
+                    You have reached AngularJS Superhero Level of : <b>Supermandog SORA</b>!
+                </p>
+                <iframe style="margin: 20px" width="420" height="315" src="//www.youtube.com/embed/Hdmm1UaX8mw" frameborder="0" allowfullscreen></iframe>
+
+
+                <p>
+                    Thank you, now <a href="../forms/forms.html">take me to the next level</a>
+                </p>
+            </div>
+
+            <div class="alert alert-danger allheroes">
+                <b>Fail!</b> Your list does not show all 100 superheroes!
+            </div>
+        </div>
+
+    </div>
+</script>
+<script>
+
+    (function () {
+
+        var results = document.createElement("div");
+        results.innerHTML = document.querySelector("#testResults").innerHTML;
+        document.body.appendChild(results)
+
+        function fail(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "block";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "none";
+            }
+        }
+
+        function success(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "none";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "block";
+            }
+        }
+
+
+        function testNinja(age) {
+            var ninja = document.querySelector("input[name='teenageMutantNinja']");
+
+            var hidden = false;
+            while(ninja.parentNode != document) {
+                if(ninja.className.indexOf("ng-hide") != -1) {
+                    hidden = true;
+                    break;
+                }
+                ninja = ninja.parentNode;
+            }
+
+            var teenager = !age || age <20;
+
+            console.log("Teenager? " + teenager);
+
+            if(!teenager && !hidden) {
+                fail("shouldhideninja")
+            } else {
+                success("shouldhideninja")
+            }
+        }
+
+        setTimeout(function() {
+
+
+            if("registration.name" !== document.querySelector("input[name='name']").getAttribute("ng-model")) {
+                fail("namebound");
+            } else {
+                success("namebound");
+            }
+            if("registration.age" !== document.querySelector("input[name='age']").getAttribute("ng-model")) {
+                fail("agebound");
+            } else {
+                success("agebound");
+            }
+
+
+            var formValid = angular.element(document.querySelector("form")).scope().regform.$valid;
+            var buttonDisabled = document.querySelector("button[type='submit']").disabled;
+            console.log(formValid +", " + buttonDisabled)
+            if(!formValid && !buttonDisabled) {
+                fail("shouldbedisabled");
+            } else {
+                success("shouldbedisabled");
+            }
+
+
+           testNinja();
+
+            angular.element(document.querySelector("form")).scope().$watch("registration.age", function(newV, old) {
+                console.log("Old: " + old +", new " + newV)
+                testNinja(newV);
+            });
+
+
+        }, 100);
+
+
+
+
+        var requests = [];
+
+        angular.module("myApp")
+                .config(function ($httpProvider) {
+                    $httpProvider.interceptors.push(function ($q) {
+                        return {
+                            'request': function (config) {
+                                console.log("On request " + config.url);
+
+                                requests.push(config);
+
+                                if( requests.length == 1 ) {
+                                    success("http")
+
+                                    if(config.url !== "superheroes.json") {
+                                        fail("wrongurl");
+                                    }
+
+                                    if(config.method!== "GET") {
+                                        fail("notget");
+                                    }
+
+                                } else if (requests.length > 1) {
+                                    fail("manyhttp");
+                                }
+                                return config || $q.when(config);
+                            },
+                            'response': function(response) {
+                                setTimeout(function() {
+                                    var numHeroes = document.querySelectorAll(".herolist li").length;
+                                    if(numHeroes == 100) {
+                                        success("allheroes");
+                                    } else {
+                                        fail("allheroes");
+                                    }
+
+                                }, 200)
+                                return response;
+                            }
+                        };
+                    });
+                }) ;
+
+    })();
+
+
+</script>

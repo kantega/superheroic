@@ -46,14 +46,16 @@
                 <input name="age" required class="form-control year" ng-model="registration.age">
 
 
-                <div class="checkbox">
+                <div class="checkbox" ng-show="registration.age < 20">
                     <label>
-                        <input type="checkbox" ng-model="teenageMutantNinja">
+                        <input name="teenageMutantNinja" type="checkbox" ng-model="teenageMutantNinja">
                         Mutant Ninja Turtle?
 
                         <p class="todo">
-                            TODO: Use <a href="http://docs.angularjs.org/api/ng/directive/ngHide">ng-hide</a>
-                            to hide this checkbox if the age of the superhero is >= 20
+                            TODO: Checkbox should only be shown if age of superhero is < 20
+
+                            Hint: <a href="http://docs.angularjs.org/api/ng/directive/ngShow">ng-show</a>.
+
                         </p>
                     </label>
 
@@ -81,7 +83,7 @@
             </div>
 
             <div>
-                <button type="submit" class="btn btn-primary" >Register</button>
+                <button type="submit" class="btn btn-primary" ng-disabled="regform.$invalid">Register</button>
                 <span class="todo">
                     TODO: Use <a href="http://docs.angularjs.org/api/ng/directive/ngDisabled">ng-disabled</a>
                     to disable the registration button only if the regform is invalid
