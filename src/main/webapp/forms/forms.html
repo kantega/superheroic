@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.1.1/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/superheroes.css">
+    <link rel="stylesheet" href="forms.css">
+</head>
+
+<body ng-app="myApp">
+
+<div class="container">
+
+
+    <h1>Superhero registration form</h1>
+
+    <div ng-controller="RegistrationController">
+
+
+        <p>Please fill out the following form to register as a superhero:</p>
+        <form name="regform" ng-submit="dsds()" role="jkkj">
+
+            <div class="form-group " ng-class="{'has-success': regform.name.$valid}">
+                <label class="control-label">Name</label>
+
+                <p class="todo">
+                    TODO: Use <code>ng-model</code> to bind this field to <code>registration.name</code>
+                </p>
+
+                <p class="todo">
+                    TODO: This form-group currently has the CSS class <code>has-success</code> hard-coded.
+                    Use Angular's <code>ng-class</code> directive instead to set <code>has-success</code> if
+                    name is present and <code>has-error</code> if name is missing.
+                    <br>
+                    (Hint: Name field is now: <span ng-show="regform.name.$valid">VALID</span> <span ng-show="regform.name.$invalid">INVALID</span>)
+                </p>
+
+                <input name="name" required class="form-control" ng-model="registration.name" placeholder="Super-Something">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Age</label>
+                <p class="todo">
+                    TODO: Use <code>ng-model</code> to bind this field to <code>registration.age</code>
+                </p>
+                <input name="age" required class="form-control year" ng-model="registration.age">
+
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="teenageMutantNinja">
+                        Mutant Ninja Turtle?
+
+                        <p class="todo">
+                            TODO: Use <a href="http://docs.angularjs.org/api/ng/directive/ngHide">ng-hide</a>
+                            to hide this checkbox if the age of the superhero is >= 20
+                        </p>
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group has-success" >
+                <label class="control-label">Superpower</label>
+
+                <div class="checkbox">
+                    <label>
+                        <input name="canfly" type="checkbox"> Can fly
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input name="invisibily" type="checkbox"> Invisibility
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input name="xrayvision" type="checkbox"> X-ray vision
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary" >Register</button>
+                <span class="todo">
+                    TODO: Use <a href="http://docs.angularjs.org/api/ng/directive/ngDisabled">ng-disabled</a>
+                    to disable the registration button only if the regform is invalid
+                </span>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+<script src="forms.js"></script>
+</body>
+</html>

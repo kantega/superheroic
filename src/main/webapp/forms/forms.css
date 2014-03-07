@@ -1,0 +1,15 @@
+.form-control.year {
+    width: 5em;
+    display:inline;
+}
+
+
+.todo:before {
+}
+.todo {
+    font-size: smaller;
+    color: grey;
+}
+.has-success .checkbox {
+    color: inherit;
+}
