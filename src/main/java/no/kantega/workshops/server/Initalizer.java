@@ -16,5 +16,7 @@ public class Initalizer implements ServletContainerInitializer{
 
         servletContext.addFilter("TestFilter", new TestFilter())
                 .addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
+
+        servletContext.addServlet("Register", new RegisterServlet()).addMapping("/forms/register");
     }
 }

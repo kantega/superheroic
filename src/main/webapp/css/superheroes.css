@@ -1,5 +1,18 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
 .container {
     margin-right: 400px;
     margin-left: 100px;
     max-width: 600px;
+}
+
+.panel.results .panel-body{
+    max-width: 450px;
+    font-size: small;
+    background-color: antiquewhite;
 }

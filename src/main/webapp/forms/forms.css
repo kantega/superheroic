@@ -1,6 +1,7 @@
-.form-control.year {
+.form-control.age{
     width: 5em;
-    display:inline;
+    display:inline-block;
+    vertical-align: top;
 }
 
 
@@ -12,4 +13,9 @@
 }
 .has-success .checkbox {
     color: inherit;
+}
+
+.age.checkbox {
+    display: inline-block;
+
 }

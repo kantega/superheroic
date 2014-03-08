@@ -45,23 +45,37 @@
                 <b>Fail!</b> Mutant Ninja Turtle checkbox should should be hidden when age is not < 20
             </div>
 
-            <div class="alert alert-success allheroes">
-                <p><b>Congratulations!</b> Your list has 100 superheroes!</p>
+            <div class="alert alert-success registerFunction">
+                <b>Yes!</b> Your controller's scope has a function callback named <code>register</code>
+            </div>
+
+            <div class="alert alert-danger registerFunction">
+                <b>Fail!</b> Your controller should have a function callback named <code>register</code>
+            </div>
+
+            <div class="alert alert-danger nohttp">
+                <b>Fail!</b> Clicking Register did not result in an HTTP request to the server!
+            </div>
+            <div class="alert alert-danger notpost">
+                <b>Fail!</b> Your HTTP request should use HTTP POST
+            </div>
+            <div class="alert alert-danger wrongurl">
+                <b>Fail!</b> Your HTTP request should post to the URL <code>"register"</code>
+            </div>
+
+
+            <div class="alert alert-success posted">
+                <p><b>Congratulations!</b> Your registration was posted!</p>
 
                 <p>
-                    You have reached AngularJS Superhero Level of : <b>Supermandog SORA</b>!
+                    You have reached AngularJS Superhero Level of : <b>Spiderman</b>!
                 </p>
-                <iframe style="margin: 20px" width="420" height="315" src="//www.youtube.com/embed/Hdmm1UaX8mw" frameborder="0" allowfullscreen></iframe>
-
-
+                <object style="margin: 20px" width="280" height="210"><param name="movie" value="//www.youtube.com/v/i5P8lrgBtcU?hl=nb_NO&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/i5P8lrgBtcU?hl=nb_NO&amp;version=3" type="application/x-shockwave-flash" width="280" height="210" allowscriptaccess="always" allowfullscreen="true"></embed></object>
                 <p>
-                    Thank you, now <a href="../forms/forms.html">take me to the next level</a>
+                    Thank you, now <a href="../">take me to the next level</a>
                 </p>
             </div>
 
-            <div class="alert alert-danger allheroes">
-                <b>Fail!</b> Your list does not show all 100 superheroes!
-            </div>
         </div>
 
     </div>
@@ -120,6 +134,7 @@
             }
         }
 
+
         setTimeout(function() {
 
 
@@ -135,7 +150,9 @@
             }
 
 
-            var formValid = angular.element(document.querySelector("form")).scope().regform.$valid;
+            var scope = angular.element(document.querySelector("form")).scope();
+
+            var formValid = scope.regform.$valid;
             var buttonDisabled = document.querySelector("button[type='submit']").disabled;
             console.log(formValid +", " + buttonDisabled)
             if(!formValid && !buttonDisabled) {
@@ -144,10 +161,15 @@
                 success("shouldbedisabled");
             }
 
+            if(scope.hasOwnProperty("register") && typeof scope.register == "function") {
+                success("registerFunction");
+            } else {
+                fail("registerFunction");
+            }
 
-           testNinja();
+            testNinja();
 
-            angular.element(document.querySelector("form")).scope().$watch("registration.age", function(newV, old) {
+            scope.$watch("registration.age", function(newV, old) {
                 console.log("Old: " + old +", new " + newV)
                 testNinja(newV);
             });
@@ -170,36 +192,36 @@
                                 requests.push(config);
 
                                 if( requests.length == 1 ) {
-                                    success("http")
-
-                                    if(config.url !== "superheroes.json") {
+                                    if(config.url !== "register") {
                                         fail("wrongurl");
                                     }
 
-                                    if(config.method!== "GET") {
-                                        fail("notget");
+                                    if(config.method!== "POST") {
+                                        fail("notpost");
                                     }
 
-                                } else if (requests.length > 1) {
-                                    fail("manyhttp");
                                 }
                                 return config || $q.when(config);
                             },
                             'response': function(response) {
-                                setTimeout(function() {
-                                    var numHeroes = document.querySelectorAll(".herolist li").length;
-                                    if(numHeroes == 100) {
-                                        success("allheroes");
-                                    } else {
-                                        fail("allheroes");
-                                    }
-
-                                }, 200)
+                                console.log("SUCCES");
+                                success("posted");
                                 return response;
                             }
                         };
                     });
                 }) ;
+
+        document.querySelector("button").addEventListener("click", function() {
+
+            setTimeout(function() {
+                console.log("Found " + requests.length + " requests");
+                if(requests.length == 0) {
+                    fail("nohttp");
+                }
+                requests = [];
+            }, 100);
+        });
 
     })();
 

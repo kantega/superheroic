@@ -18,9 +18,10 @@
 
 
         <p>Please fill out the following form to register as a superhero:</p>
-        <form name="regform" ng-submit="dsds()" role="jkkj">
+        <form name="regform" ng-submit="register()" role="jkkj">
 
             <div class="form-group " ng-class="{'has-success': regform.name.$valid}">
+
                 <label class="control-label">Name</label>
 
                 <p class="todo">
@@ -43,10 +44,10 @@
                 <p class="todo">
                     TODO: Use <code>ng-model</code> to bind this field to <code>registration.age</code>
                 </p>
-                <input name="age" required class="form-control year" ng-model="registration.age">
+                <input name="age" type="number" min="5" max="200" required class="form-control age" ng-model="registration.age">
 
 
-                <div class="checkbox" ng-show="registration.age < 20">
+                <div class="checkbox age" ng-show="registration.age < 20">
                     <label>
                         <input name="teenageMutantNinja" type="checkbox" ng-model="teenageMutantNinja">
                         Mutant Ninja Turtle?
@@ -93,6 +94,30 @@
         </form>
 
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
