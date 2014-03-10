@@ -15,11 +15,11 @@
     <h1>GETting data from the server</h1>
 
     <p>
-        This page contains a hard-coded HTML list of Superheroes. That's not very super!
+        This page contains a hard-coded HTML list of only two Superheroes. That's not very super!
     </p>
     <p>
-        Your goal is to improve fetching of a <a href="superheroes.json">list of super heroes</a> in JSON format
-        from the server. Add the list to the scope of a controller and print them out using what you learned in the previous task.
+        Your goal is to improve the list by fetching a <a href="superheroes.json">list of super heroes</a> in JSON format
+        from the server. Then add the list to the scope of a controller and list them out using <code>ng-repeat</code> just like in the previous task.
     </p>
     <p class="alert alert-success">
         Hint: Check out Angular's <a href="http://docs.angularjs.org/api/ng/service/$http">$http</a> service!
@@ -29,8 +29,12 @@
 
     <ul class="herolist" ng-controller="HeroesController">
         <li>
-            <img src="fix_me">
-            <h3>Hero name</h3>
+            <img src="http://static.comicvine.com/uploads/scale_small/6/66303/1976044-act01_cvr1_02.jpeg">
+            <h3>Superman</h3>
+        </li>
+        <li>
+            <img src="http://static.comicvine.com/uploads/scale_small/6/66303/2961034-screen+shot+2013-04-03+at+5.56.06+am.png">
+            <h3>Batman</h3>
         </li>
     </ul>
 
