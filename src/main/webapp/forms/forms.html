@@ -18,25 +18,30 @@
 
 
         <p>Please fill out the following form to register as a superhero:</p>
-        <form name="regform" ng-submit="register()" role="jkkj">
+        <form name="regform" ng-submit="register()">
 
-            <div class="form-group ">
+            <div class="form-group has-success">
 
                 <label class="control-label">Name</label>
 
                 <p class="todo">
-                    TODO: Use <code>ng-model</code> to bind this field to <code>registration.name</code>
+                    TODO: Use <code>ng-model</code> to bind the 'name' input field to <code>registration.name</code>
                 </p>
 
                 <p class="todo">
                     TODO: This form-group currently has the CSS class <code>has-success</code> hard-coded.
                     Use Angular's <code>ng-class</code> directive instead to set <code>has-success</code> if
                     name is present and <code>has-error</code> if name is missing.
-                    <br>
-                    (Hint: Name field is now: <span ng-show="regform.name.$valid">VALID</span> <span ng-show="regform.name.$invalid">INVALID</span>)
+
                 </p>
 
-                <input name="name" required class="form-control"  placeholder="Super-Something">
+                <p class="alert alert-success">
+                    Hint: Name field is now:
+                    <span ng-show="regform.name.$valid">VALID</span>
+                    <span ng-show="regform.name.$invalid">INVALID</span>
+                </p>
+
+                <input name="name" required class="form-control"   placeholder="Super-Something">
             </div>
 
             <div class="form-group">
