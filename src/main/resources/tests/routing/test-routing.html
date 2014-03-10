@@ -48,7 +48,7 @@
                 <p>
                     You have reached AngularJS Superhero Level of : <b>Batman</b>!
                 </p>
-                <iframe width="280" height="210" src="//www.youtube.com/embed/oDc-1zfffMw" frameborder="0" allowfullscreen></iframe>
+                <div id="batman"></div>
 
 
                 <p>
@@ -112,6 +112,7 @@
                                     fail("heroes_url");
                                 } else {
                                     success("batman")
+                                    document.querySelector("#batman").innerHTML = '<iframe width="280" height="210" src="//www.youtube.com/embed/oDc-1zfffMw?autoplay=1" frameborder="0" allowfullscreen></iframe>'
                                 }
                             } else {
                                 fail("heroes");
