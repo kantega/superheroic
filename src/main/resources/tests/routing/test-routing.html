@@ -1,0 +1,140 @@
+<style>
+    .results .alert {
+        display: none;
+    }
+
+
+</style>
+
+<script type="text/html" id="testResults">
+    <div class="panel panel-default results" style="position: fixed;bottom:0; right:20px" id="testResultsApp">
+        <div class="panel-heading">
+            <div class="panel-title">Test results:</div>
+        </div>
+        <div class="panel-body" id="resultBody">
+
+            <div class="alert alert-success view">
+                <b>Yes!</b> Your page has <code>ng-view</code>
+            </div>
+            <div class="alert alert-danger view">
+                <b>Fail!</b> Your page has no <code>ng-view</code>
+            </div>
+
+            <div class="alert alert-success register">
+                <b>Yes!</b> Your $route has when-rule for <code>/register</code>
+            </div>
+            <div class="alert alert-danger register">
+                <b>Fail!</b> Your $route is missing a when-rule for <code>/register</code>
+            </div>
+            <div class="alert alert-danger register_url">
+                <b>Fail!</b> Your when-rule for /register should have templateUrl: <code>/partials/register.html</code>
+            </div>
+            <div class="alert alert-success heroes">
+                <b>Yes!</b> Your $route has when-rule for <code>/heroes</code>
+            </div>
+            <div class="alert alert-danger heroes">
+                <b>Fail!</b> Your $route is missing a when-rule for <code>/heroes</code>
+            </div>
+            <div class="alert alert-danger heroes_url">
+                <b>Fail!</b> Your when-rule for /heroes should have templateUrl: <code>/partials/heroes.html</code>
+            </div>
+
+
+
+
+            <div class="alert alert-success batman">
+                <p><b>Congratulations!</b> Your list has 100 superheroes!</p>
+
+                <p>
+                    You have reached AngularJS Superhero Level of : <b>Batman</b>!
+                </p>
+                <iframe width="280" height="210" src="//www.youtube.com/embed/oDc-1zfffMw" frameborder="0" allowfullscreen></iframe>
+
+
+                <p>
+                    Thank you, now <a href="../forms/forms.html">take me to the next level</a>
+                </p>
+            </div>
+
+            <div class="alert alert-danger allheroes">
+                <b>Fail!</b> Your list does not show all 100 superheroes!
+            </div>
+        </div>
+
+    </div>
+</script>
+<script>
+
+    (function () {
+
+        var results = document.createElement("div");
+        results.innerHTML = document.querySelector("#testResults").innerHTML;
+        document.body.appendChild(results)
+
+        function fail(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "block";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "none";
+            }
+        }
+
+        function success(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "none";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "block";
+            }
+        }
+
+        var routes;
+
+
+            if(document.querySelector("*[ng-view]")) {
+
+                success("view");
+
+                setTimeout(function() {
+                    if(routes["/register"]) {
+                        success("register");
+                        if("partials/register.html" !== routes["/register"].templateUrl) {
+                            fail("register_url");
+                        } else {
+                            if(routes["/heroes"]) {
+                                success("heroes");
+                                if("partials/heroes.html" !== routes["/heroes"].templateUrl) {
+                                    fail("heroes_url");
+                                } else {
+                                    success("batman")
+                                }
+                            } else {
+                                fail("heroes");
+                            }
+                        }
+                    } else {
+                        fail("register");
+                    }
+
+
+                }, 100);
+            } else {
+                fail("view");
+            }
+
+
+
+        angular.module("myApp")
+                .run(function($route) {
+                    routes = $route.routes;
+                })
+
+    })();
+
+
+</script>

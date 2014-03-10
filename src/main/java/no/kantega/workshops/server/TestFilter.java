@@ -92,5 +92,13 @@ public class TestFilter implements Filter {
         public PrintWriter getWriter() throws IOException {
             return super.getWriter();
         }
+
+        @Override
+        public void setDateHeader(String name, long date) {
+            if(name.equals("Last-Modified")) {
+                return;
+            }
+            super.setDateHeader(name, date);
+        }
     }
 }
