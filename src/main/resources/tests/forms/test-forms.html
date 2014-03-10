@@ -155,10 +155,12 @@
             var formValid = scope.regform.$valid;
             var buttonDisabled = document.querySelector("button[type='submit']").disabled;
             console.log(formValid +", " + buttonDisabled)
-            if(!formValid && !buttonDisabled) {
-                fail("shouldbedisabled");
-            } else {
-                success("shouldbedisabled");
+            if(!formValid) {
+                if(!buttonDisabled) {
+                    fail("shouldbedisabled");
+                } else {
+                    success("shouldbedisabled");
+                }
             }
 
             if(scope.hasOwnProperty("register") && typeof scope.register == "function") {
