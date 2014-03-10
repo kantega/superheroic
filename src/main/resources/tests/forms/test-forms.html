@@ -78,9 +78,9 @@
                 <p>
                     You have reached AngularJS Superhero Level of : <b>Spiderman</b>!
                 </p>
-                <object style="margin: 20px" width="280" height="210"><param name="movie" value="//www.youtube.com/v/i5P8lrgBtcU?hl=nb_NO&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/i5P8lrgBtcU?hl=nb_NO&amp;version=3" type="application/x-shockwave-flash" width="280" height="210" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+                <div id="spiderman"></div>
                 <p>
-                    Thank you, now <a href="../">take me to the next level</a>
+                    Thank you, now <a style="font-size: 120%" href="../routing/routing.html">take me to the next level</a>
                 </p>
             </div>
 
@@ -224,6 +224,7 @@
                             'response': function(response) {
                                 console.log("SUCCES");
                                 success("posted");
+                                document.querySelector("#spiderman").innerHTML = '<iframe width="280" height="210" src="//www.youtube.com/embed/i5P8lrgBtcU?autoplay=1" frameborder="0" allowfullscreen></iframe>'
                                 return response;
                             }
                         };
