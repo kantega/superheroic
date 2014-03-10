@@ -1,11 +1,8 @@
 angular.module("myApp", [])
     .controller("HeroesController", function  HeroesController($scope, $http) {
 
-        $http.get("superheroes.json").success(function(data) {
-            $scope.heroes = data;
-            console.log("Setting on scope");
-
-        });
+        // TODO: use $http to fetch "superheroes.json" from the server.
+        // The returned array should added as property "heroes" to the $scope
 
 
     });
