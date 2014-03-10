@@ -55,7 +55,7 @@
                 </div>
                 <div class="alert alert-danger heroes">
                     <b>Fail!</b> Your controller should add an an array named <span class="label label-success">heroes</span> its
-                    <a href="http://docs.angularjs.org/guide/scope">scope</a>!
+                    <a target="_blank" href="http://docs.angularjs.org/guide/scope">scope</a>!
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
                     <b>Yes!</b> Those are some great superheroes you have in your scope!
                 </div>
                 <div class="alert alert-danger knownHeroes">
-                    <b>Fail!</b> You need at least tree <a href="http://www.superherodb.com/characters/">know superhero names</a> in
+                    <b>Fail!</b> You need at least tree <a target="_blank" href="http://www.superherodb.com/characters/">know superhero names</a> in
                     your <span class="label label-success">heroes</span> array
                 </div>
             </div>
@@ -77,16 +77,16 @@
                     <p>
                         You are now at AngularJS Superhero Level of : <b>Krypto the Superdog!</b>
                     </p>
-                    <iframe style="margin-top:20px" width="420" height="315" src="//www.youtube.com/embed/OP6-jZ6EVCY" frameborder="0" allowfullscreen></iframe>
+                    <div id="krypto"></div>
 
                     <p>
 
-                        Okay, now take me to the <a href="../">next level</a>
+                        Okay, now take me to the <a href="../http/http.html">next level</a>
                     </p>
 
                 </div>
                 <div class="alert alert-danger foundHeroes">
-                    <b>Fail!</b> The page should list all your superheroes in an <a href="http://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a>
+                    <b>Fail!</b> The page should list all your superheroes in an <a target="_blank" href="http://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a>
                 </div>
             </div>
         </div>
@@ -153,6 +153,7 @@
 
                         if(found == scope.heroes.length) {
                             document.querySelector(".alert-success.foundHeroes" ).style.display = "block";
+                            document.querySelector("#krypto").innerHTML = '<iframe style="margin-top:20px" width="280" height="210" src="//www.youtube.com/embed/OP6-jZ6EVCY?autoplay=1" frameborder="0" allowfullscreen></iframe>';
                         } else {
                             document.querySelector(".alert-danger.foundHeroes" ).style.display = "block";
                         }
