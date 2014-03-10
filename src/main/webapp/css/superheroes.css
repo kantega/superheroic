@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Bangers);
+@import url(http://fonts.googleapis.com/css?family=Boogaloo);
+
 html {
     min-height: 100%;
 }
@@ -8,11 +11,24 @@ body {
 .container {
     margin-right: 400px;
     margin-left: 100px;
-    max-width: 600px;
+    max-width: 700px;
 }
 
 .panel.results .panel-body{
     max-width: 450px;
     font-size: small;
     background-color: antiquewhite;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bangers', cursive;
+}
+p, div {
+    font-family: 'Boogaloo', cursive;
+}
+
+.extruded {
+    position: relative;
+    text-shadow: #BBB 1px 1px, #BBB 2px 2px, #BBB 3px 3px, #BBB 4px 4px, #BBB 5px 5px, #BBB 6px 6px, #BBB 7px 7px, #BBB 8px 8px;
+
 }
