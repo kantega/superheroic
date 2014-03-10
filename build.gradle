@@ -1,0 +1,48 @@
+apply plugin: 'jettyEclipse'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath (group: 'com.sahlbach.gradle', name: 'gradle-jetty-eclipse-plugin', version: '1.9.+')
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "javax:javaee-api:6.0"
+    compile "org.webjars:angularjs:1.2.14"
+    compile "org.webjars:bootstrap:3.1.1"
+    compile "commons-io:commons-io:2.4"
+    providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+}
+
+/*
+apply plugin: 'war'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.ajoberstar:gradle-git:0.6.1'
+        classpath fileTree(dir: 'build/arquillian/build/libs', includes: ['arquillian-0.1.jar'])
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "javax.servlet:jstl:1.2"
+    compile "net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:2.5"
+    compile "log4j:log4j:1.2.16"
+    compile "org.slf4j:slf4j-log4j12:1.6.2"
+    providedCompile "javax.servlet:servlet-api:2.5"
+}
+*/
