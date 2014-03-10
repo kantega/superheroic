@@ -1,0 +1,17 @@
+<!-- Move superhero list here-->
+<div class="panel panel-default" ng-controller="HeroesController">
+    <div class="panel-heading">Superheroes</div>
+    <div class="panel-body">
+        <div class="form-group ">
+            <label class="control-label">Filter by name</label>
+            <input name="name" class="form-control" ng-model="name" placeholder="Super-Something" autocomplete="off">
+        </div>
+
+        <ul class="herolist">
+            <li ng-repeat="hero in heroes |filter:name">
+                <img src="{{hero.image}}">
+                <h3>{{hero.name}}</h3>
+            </li>
+        </ul>
+    </div>
+</div>

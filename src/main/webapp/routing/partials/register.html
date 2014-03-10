@@ -1,0 +1,16 @@
+<!-- Move registration form here-->
+<div class="panel panel-default" ng-controller="RegistrationController">
+    <div class="panel-heading">Register superhero</div>
+    <div class="panel-body">
+        <form name="regform" ng-submit="register(registration)">
+            <div class="form-group " ng-class="{'has-success': regform.name.$valid}">
+                <label class="control-label">Name</label>
+
+                <input name="name" required class="form-control" ng-model="registration.name" placeholder="Super-Something">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" ng-disabled="regform.$invalid">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

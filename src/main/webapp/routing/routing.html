@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.1.1/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/superheroes.css">
+    <link rel="stylesheet" href="../http/http.css">
+</head>
+
+<body ng-app="myApp">
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#/superheroes">List superheroes</a>
+
+            </li>
+            <li>
+                <a href="#/register">Register superhero</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Routing</h1>
+
+    <p>
+        This page has UI for listing and registering superheroes on the same page.
+    </p>
+    <p>
+        That's pretty cluttered. Use <a href="http://docs.angularjs.org/api/ngRoute/">ngRoute</a> to split the registration form
+        and the list into two separate HTML templates: register.html and heroes.html
+    </p>
+    <p>
+        Each "page" should be reachable my clicking the links in the menu above.
+    </p>
+
+    <div class="alert alert-info">
+        HINT: Check out this <a target="_blank" href="http://docs.angularjs.org/tutorial/step_07">tutorial on ngRoute</a>
+    </div>
+
+    <!-- TODO: Move this registration form into partials/register.html-->
+
+
+
+    <!-- TODO: Move this list UI into partials/heroes.html-->
+
+
+
+    <!-- TODO: This is where you want your templates to be rendered
+        Hint: http://docs.angularjs.org/api/ngRoute/directive/ngView
+    -->
+    <div ng-view>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-route.js"></script>
+<script src="routing.js"></script>
+
+
+</body>
+</html>
