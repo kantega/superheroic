@@ -54,7 +54,7 @@
             </div>
 
             <div>
-                <div class="alert alert-info found-text" >
+                <div class="alert alert-success found-text" >
                     <p>
                         <b>Congratulations!</b> Your input text was found on the page!
                     </p>
@@ -62,10 +62,10 @@
                         You are now at AngularJS SuperHero Level: <b>BananaMan</b>!
                     </p>
 
-                    <iframe style="margin: 10px" width="280" height="210" src="//www.youtube.com/embed/Hq2KXudEjkI" frameborder="0" allowfullscreen></iframe>
+                    <div id="bananaman"></div>
 
                     <p>
-                        Alright, now <a href="../repeat/repeat.html">take me to the next task</a>
+                        Alright, now <a href="../repeat/repeat.html" style="font-size: 120%">take me to the next level!</a>
                     </p>
                 </div>
                 <div class="alert alert-danger found-text">
@@ -83,6 +83,28 @@
         var results = document.createElement("div");
         results.innerHTML = document.querySelector("#testResults").innerHTML;
         document.body.appendChild(results)
+
+        function fail(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "block";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "none";
+            }
+        }
+
+        function success(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "none";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "block";
+            }
+        }
 
         var result = [];
 
@@ -110,10 +132,17 @@
                 input.addEventListener("keyup", function() {
                     document.querySelector(".alert-danger.nothing-typed").style.display = "none";
 
-                    if(document.body.textContent.indexOf(input.value) != -1) {
-                        document.querySelector(".alert-info.found-text").style.display = "block";
+                    var html = document.body.innerHTML;
+                    var inputText = input.value.trim();
+
+                    if(html.indexOf(inputText) != -1) {
+                        success("found-text");
+                        var banana = document.querySelector("#bananaman");
+                        if(banana.innerHTML.length ==0) {
+                            banana.innerHTML = '<iframe style="margin: 10px" width="280" height="210" src="//www.youtube.com/embed/Hq2KXudEjkI?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+                        }
                     } else {
-                        document.querySelector(".alert-danger.found-text").style.display = "block";
+                        fail("found-text");
                     }
 
                 })
