@@ -35,7 +35,7 @@
                 <p>
                     You have reached AngularJS Superhero Level of : <b>Supermandog SORA</b>!
                 </p>
-                <iframe width="280" height="210" src="//www.youtube.com/embed/Hdmm1UaX8mw" frameborder="0" allowfullscreen></iframe>
+                <div id="sora"></div>
 
 
                 <p>
@@ -114,6 +114,7 @@
                                     var numHeroes = document.querySelectorAll(".herolist li").length;
                                     if(numHeroes == 100) {
                                         success("allheroes");
+                                        document.querySelector("#sora").innerHTML = '<iframe width="280" height="210" src="//www.youtube.com/embed/Hdmm1UaX8mw?autoplay=1" frameborder="0" allowfullscreen></iframe>'
                                     } else {
                                         fail("allheroes");
                                     }
