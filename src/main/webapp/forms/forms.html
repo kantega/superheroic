@@ -20,7 +20,7 @@
         <p>Please fill out the following form to register as a superhero:</p>
         <form name="regform" ng-submit="register()" role="jkkj">
 
-            <div class="form-group " ng-class="{'has-success': regform.name.$valid}">
+            <div class="form-group ">
 
                 <label class="control-label">Name</label>
 
@@ -36,7 +36,7 @@
                     (Hint: Name field is now: <span ng-show="regform.name.$valid">VALID</span> <span ng-show="regform.name.$invalid">INVALID</span>)
                 </p>
 
-                <input name="name" required class="form-control" ng-model="registration.name" placeholder="Super-Something">
+                <input name="name" required class="form-control"  placeholder="Super-Something">
             </div>
 
             <div class="form-group">
@@ -44,10 +44,10 @@
                 <p class="todo">
                     TODO: Use <code>ng-model</code> to bind this field to <code>registration.age</code>
                 </p>
-                <input name="age" type="number" min="5" max="200" required class="form-control age" ng-model="registration.age">
+                <input name="age" type="number" min="5" max="200" required class="form-control age">
 
 
-                <div class="checkbox age" ng-show="registration.age < 20">
+                <div class="checkbox age" >
                     <label>
                         <input name="teenageMutantNinja" type="checkbox" ng-model="teenageMutantNinja">
                         Mutant Ninja Turtle?
@@ -84,7 +84,7 @@
             </div>
 
             <div>
-                <button type="submit" class="btn btn-primary" ng-disabled="regform.$invalid">Register</button>
+                <button type="submit" class="btn btn-primary">Register</button>
                 <span class="todo">
                     TODO: Use <a href="http://docs.angularjs.org/api/ng/directive/ngDisabled">ng-disabled</a>
                     to disable the registration button only if the regform is invalid

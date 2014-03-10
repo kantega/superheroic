@@ -1,18 +1,7 @@
 angular.module("myApp", ["ngRoute"])
 
     .config(function ($routeProvider) {
-        $routeProvider.
-            when('/register', {
-                templateUrl: 'partials/register.html',
-                controller: 'RegistrationController'
-            }).
-            when('/heroes', {
-                templateUrl: 'partials/heroes.html',
-                controller: 'HeroesController'
-            }).
-            otherwise({
-                redirectTo: '/heroes'
-            });
+        // TODO: Configure the $routeProvider rules here
     })
     .controller("RegistrationController", function($scope, $http, $location) {
         $scope.register = function(reg) {

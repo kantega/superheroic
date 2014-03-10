@@ -48,17 +48,46 @@
     </div>
 
     <!-- TODO: Move this registration form into partials/register.html-->
+    <div class="panel panel-default" ng-controller="HeroesController">
+        <div class="panel-heading">Superheroes</div>
+        <div class="panel-body">
+            <div class="form-group ">
+                <label class="control-label">Filter by name</label>
+                <input name="name" class="form-control" ng-model="name" placeholder="Super-Something" autocomplete="off">
+            </div>
 
+            <ul class="herolist">
+                <li ng-repeat="hero in heroes |filter:name">
+                    <img src="{{hero.image}}">
+                    <h3>{{hero.name}}</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 
     <!-- TODO: Move this list UI into partials/heroes.html-->
+    <div class="panel panel-default" ng-controller="RegistrationController">
+        <div class="panel-heading">Register superhero</div>
+        <div class="panel-body">
+            <form name="regform" ng-submit="register(registration)">
+                <div class="form-group " ng-class="{'has-success': regform.name.$valid}">
+                    <label class="control-label">Name</label>
 
+                    <input name="name" required class="form-control" ng-model="registration.name" placeholder="Super-Something">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" ng-disabled="regform.$invalid">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
     <!-- TODO: This is where you want your templates to be rendered
         Hint: http://docs.angularjs.org/api/ngRoute/directive/ngView
     -->
-    <div ng-view>
+    <div>
     </div>
 </div>
 

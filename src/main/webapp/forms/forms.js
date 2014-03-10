@@ -3,10 +3,6 @@ angular.module("myApp", [])
 
         $scope.registration = {};
 
-        $scope.register = function(registration) {
-            $http.post("register", registration).success(function(data) {
-                console.log("Success: " + data)
-            });
-
-        }
+        // TODO: Add a "register" function to the scop
+        // The function should POST the registration to the URL "register"
     });
