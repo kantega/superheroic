@@ -46,18 +46,19 @@
             </div>
 
             <div class="alert alert-success ngSubmit">
-                <b>Yes!</b> Your form you have an <code>ng-submit</code> calling <code>register()</code>
+                <b>Yes!</b> Your form you have an <code>ng-submit</code> calling <code>register(registration)</code>
             </div>
 
             <div class="alert alert-danger ngSubmit">
-                <b>Fail!</b> Your form does not have an <code>ng-submit</code> calling <code>register()</code>
+                <b>Fail!</b> Your form does not have an <code>ng-submit</code> calling <code>register(registration)</code>
             </div>
             <div class="alert alert-success registerFunction">
                 <b>Yes!</b> Your controller's scope has a function callback named <code>register</code>
             </div>
 
             <div class="alert alert-danger registerFunction">
-                <b>Fail!</b> Your controller should have a function named <code>register</code>
+                <b>Fail!</b> Your controller should have a function named <code>register</code> taking
+                <code>registration</code> as a parameter.
             </div>
 
             <div class="alert alert-danger nohttp">
@@ -170,9 +171,11 @@
                 }
             }
 
-            if(document.querySelector("form[ng-submit='register()']")) {
+            if(document.querySelector("form[ng-submit='register(registration)']")) {
                 success("ngSubmit")
-                if(scope.hasOwnProperty("register") && typeof scope.register == "function") {
+                if(scope.hasOwnProperty("register")
+                        && typeof scope.register == "function"
+                        && scope.register.toString().indexOf("function (registration)") == 0) {
                     success("registerFunction");
                 } else {
                     fail("registerFunction");
