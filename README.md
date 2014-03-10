@@ -1,2 +1,3 @@
-Workshop: Superheroic Web Development with AngularJS
+Superheroic Web Development with AngularJS
 ===========
+Workshop at Booster 2014
