@@ -3,6 +3,6 @@ angular.module("myApp", [])
 
         $scope.registration = {};
 
-        // TODO: Add a "register" function to the scop
+        // TODO: Add a "register" function to the scope
         // The function should POST the registration to the URL "register"
     });
