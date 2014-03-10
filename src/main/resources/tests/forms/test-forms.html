@@ -45,6 +45,13 @@
                 <b>Fail!</b> Mutant Ninja Turtle checkbox should should be hidden when age is not < 20
             </div>
 
+            <div class="alert alert-success ngSubmit">
+                <b>Yes!</b> Your form you have an <code>ng-submit</code> calling <code>register()</code>
+            </div>
+
+            <div class="alert alert-danger ngSubmit">
+                <b>Fail!</b> Your form does not have an <code>ng-submit</code> calling <code>register()</code>
+            </div>
             <div class="alert alert-success registerFunction">
                 <b>Yes!</b> Your controller's scope has a function callback named <code>register</code>
             </div>
@@ -163,11 +170,17 @@
                 }
             }
 
-            if(scope.hasOwnProperty("register") && typeof scope.register == "function") {
-                success("registerFunction");
+            if(document.querySelector("form[ng-submit='register()']")) {
+                success("ngSubmit")
+                if(scope.hasOwnProperty("register") && typeof scope.register == "function") {
+                    success("registerFunction");
+                } else {
+                    fail("registerFunction");
+                }
             } else {
-                fail("registerFunction");
+                fail("ngSubmit");
             }
+
 
             testNinja();
 
