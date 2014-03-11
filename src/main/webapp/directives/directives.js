@@ -7,7 +7,7 @@ angular.module("myApp", [])
 
             link: function (scope, elem, attrs) {
 
-                // Add Javascript which initially sets style.opacity of all imaged to 0,
+                // Add Javascript which initially sets style.opacity of all images to 0,
                 // then to 1 for the duration of the currently active image
                 // Feel free to steal the code from directives.html and use that as a starting point.
 
