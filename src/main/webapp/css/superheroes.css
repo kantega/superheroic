@@ -24,7 +24,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .extruded {
-    position: relative;
-    text-shadow: #BBB 1px 1px, #BBB 2px 2px, #BBB 3px 3px, #BBB 4px 4px, #BBB 5px 5px, #BBB 6px 6px, #BBB 7px 7px, #BBB 8px 8px;
+    font-size:250%;
+    text-shadow: 3px 3px #BBB;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: orange
 
 }
