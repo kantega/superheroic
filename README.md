@@ -2,10 +2,11 @@
 
 ## About ##
 
- [AngularJS](http://angularjs.org/) workshop at [Booster](http://www.boosterconf.no/) 2014.
+[AngularJS](http://angularjs.org/) workshop at [Booster](http://www.boosterconf.no/) 2014.
 
 ## Requirements ##
 
+* Git 1.7.10+
 * Apache Maven 3.x || Eclipse || Gradle 1.11
 * JVM 7.x
 * A decent IDE, like IDEA, Eclipse

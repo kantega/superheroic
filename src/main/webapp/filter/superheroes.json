@@ -1,0 +1,404 @@
+[
+
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/1976044-act01_cvr1_02.jpeg",
+        "name": "Superman"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2961034-screen+shot+2013-04-03+at+5.56.06+am.png",
+        "name": "Batman"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/100647/3676525-tumblr_mumn01qjs71rcp7bmo1_1280.jpg",
+        "name": "Spider-Man"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11/117763/2800315-tumblr_mgdfl05lr71qiknbco1_1280.jpg",
+        "name": "Thor"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/2923118-gl_cv21_077xwdw4ws_.jpg",
+        "name": "Hal Jordan"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11111/111111230/3622971-wonderwoman_02.jpg",
+        "name": "Wonder Woman"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3577908-hulk2014001-cov-var-645e9.jpg",
+        "name": "Hulk"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2200288-1316662425_cvr.jpeg",
+        "name": "Dick Grayson"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3618151-captainamerica.final.low.jpg",
+        "name": "Captain America"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/100647/2957134-1364659370.jpg",
+        "name": "Martian Manhunter"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/2934379-fantastic_four_2_kubert_var_now_.jpg",
+        "name": "Thing"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/1/18474/362573-61787-human-torch.jpg",
+        "name": "Human Torch"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/33913/1671859-ff003_cov.jpg",
+        "name": "Mr. Fantastic"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11/117763/2938973-ue.jpg",
+        "name": "Invisible Woman"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/7/71975/2275343-20992_900x1350.jpg",
+        "name": "Wally West"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/1839624-aqm_cv1.jpeg",
+        "name": "Aquaman"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2695930-ga_cv17_r1.jpg",
+        "name": "Green Arrow"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11/117982/2829979-kyle_rayner_white_lantern.jpg",
+        "name": "Kyle Rayner"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/3591555-screen+shot+2014-01-22+at+7.54.57+am.png",
+        "name": "Cyborg"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/100647/2869108-sb_cv20_2d6zilu8mg_.jpg",
+        "name": "Superboy"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/3563896-gl28_02_52d045197ccda3.33421181.jpg",
+        "name": "Supergirl"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/67602/2986150-tmnt+leo+cover.jpg",
+        "name": "Leonardo"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/67602/2986147-423562962_aea5068d17_o.jpg",
+        "name": "Raphael"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/67602/2986160-tumblr_m9way1u5x51r7rdaz.jpg",
+        "name": "Donatello"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/67602/2986154-tmnt+mike+cover.jpg",
+        "name": "Michelangelo"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3498577-silvsurf2014001-allred-promo-rev2-7a56c.jpg",
+        "name": "Silver Surfer"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/39027/3563412-1476516_10151869672358598_424979154_n.jpg",
+        "name": "Iron Man"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/12/120019/3362537-100_11201.jpg",
+        "name": "Barry Allen"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2174619-screen_shot_2012_01_25_at_4.17.53_pm_1.png",
+        "name": "Tim Drake"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3236699-bop_cv25_r1_8avz2j8tjx_.jpg",
+        "name": "Black Canary"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/9/99801/2544428-justice_leauge_0_variant.jpg",
+        "name": "Billy Batson"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2760649-screen_shot_2012_12_19_at_7.20.46_am.png",
+        "name": "Orion"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/2/25835/615247-herc126_cov.jpg",
+        "name": "Hercules"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/65423/3364126-steel.jpg",
+        "name": "Steel"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2366859-rvgers_cv4.jpeg",
+        "name": "Beast Boy"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/101073/2211420-ff_606_cov.jpg",
+        "name": "Black Panther"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3498548-dd2014001cov-c2289.jpg",
+        "name": "Daredevil"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3445081-wolv2014001_cov.jpg",
+        "name": "Wolverine"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/5/58245/1264261-donna.jpg",
+        "name": "Donna Troy"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/9/92932/2187442-vix01.jpg",
+        "name": "Vixen"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/2/25835/3501783-tt_raven_01_kr.jpg",
+        "name": "Raven"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/3497393-screen+shot+2013-12-11+at+9.54.32+pm.png",
+        "name": "Plastic Man"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/4/49448/2436148-dk_dcguide_redtornado__1_.jpg",
+        "name": "Red Tornado"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3652824-bg_cv31_52fa849bc8b5b2.39262016.jpg",
+        "name": "Barbara Gordon"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/2971636-glcor_cv22_gnxm17pqam_.jpg",
+        "name": "John Stewart"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/65423/2334403-hawkgirl.jpg",
+        "name": "Hawkgirl"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/101435/2816380-starfire.jpg",
+        "name": "Starfire"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/3244067-dcvmu_cv4_zey2xq5b86_.jpg",
+        "name": "Zatanna"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/2124502-palmer_2.jpg",
+        "name": "Ray Palmer"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11/117763/3088822-age_of_ultron_vol_1_10a.i._rivera_variant_textless.jpg",
+        "name": "Hank Pym"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2753066-screen_shot_2012_12_14_at_8.45.48_pm.png",
+        "name": "Damian Wayne"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/39027/3535502-7.%29+hawkeye.jpg",
+        "name": "Hawkeye"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/0/40/77095-113715-huntress.jpg",
+        "name": "Huntress (Bertinelli)"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3445210-newavn2013015_bianchi.jpg",
+        "name": "Doctor Strange"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11/117763/3168597-beyonder00109.jpg",
+        "name": "Professor X"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/0/8190/590746-34.jpg",
+        "name": "Jericho"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/12/120019/3416649-untitled.jpg",
+        "name": "Rorschach"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/100647/3248935-before_watchmen_dr._mahattan_1.jpg",
+        "name": "Dr. Manhattan"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/2374390-niteowl_cv1_combo.jpg",
+        "name": "Nite Owl (Dreiberg)"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/9/96230/1829615-nickfury_main.jpg",
+        "name": "Nick Fury"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/65423/1839640-svghkman_cv1.jpg",
+        "name": "Hawkman"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2339119-dcup_12.jpeg",
+        "name": "Bart Allen"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/39027/3558381-winter_soldier_1%40a_1.jpg",
+        "name": "Bucky Barnes"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11/117763/3502271-wasp.jpg",
+        "name": "Wasp"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/9/99801/2445531-2286841_earth2_cv3.jpg",
+        "name": "Alan Scott"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/100647/2877411-2876238_remove_the_word_run.png",
+        "name": "Jay Garrick"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/4/43640/2305179-the_black_bat_by_jenzee_d473d1j.jpg",
+        "name": "Cassandra Cain"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2644659-phstr_cv4.jpeg",
+        "name": "Phantom Stranger"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/4/46385/2764868-blacklightningnew52.jpg",
+        "name": "Black Lightning"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/100647/3137244-20176_900x1350.jpg",
+        "name": "Blue Beetle"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2961035-screen+shot+2013-04-03+at+6.11.05+am.png",
+        "name": "Mr. Miracle"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2961032-screen+shot+2013-04-03+at+6.10.31+am.png",
+        "name": "Big Barda"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/8/80111/2839331-booster_gold.png",
+        "name": "Booster Gold"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/64586/2184151-silk_spectre_edit.jpg",
+        "name": "Silk Spectre"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/2/25835/1842022-kilowog_gleason.jpg",
+        "name": "Kilowog"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11/117763/3290169-sentrydeath.jpg",
+        "name": "Sentry"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/1147212-martian_4.jpg",
+        "name": "Miss Martian"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/64770/1297557-knight.jpg",
+        "name": "Knight"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/68065/2157002-jla_january_firestorm_colors_sotd_by_ratkins_d4lvhxs.jpg",
+        "name": "Firestorm"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11/117763/2750928-tumblr_meywolzs861qiknbco1_1280.jpg",
+        "name": "Nova"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3384249-amazing-xmen3-cvr-fin.jpg",
+        "name": "Beast"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/11/117763/3274127-wolverine04103.jpg",
+        "name": "Skaar"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/0/3852/112304-169838-lightray.jpg",
+        "name": "Lightray"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66303/2979004-invincible105-web.jpg",
+        "name": "Invincible"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3445100-shehulk2014001_cov.jpg",
+        "name": "She-Hulk"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/65423/1839631-catom_cv1.jpg",
+        "name": "Captain Atom"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3652788-wfine_cv23_52fa65c7ad0736.10396264.jpg",
+        "name": "Power Girl"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3105968-avenai2013003_cov.jpg",
+        "name": "Vision"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/62058/1158307-justice_society_of_america_6_800x600.jpg",
+        "name": "Damage"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/65423/1839639-mr_terr_cv1.jpg",
+        "name": "Mr. Terrific"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/101416/3659930-brb.png",
+        "name": "Beta Ray Bill"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3384152-bwidow2013002cov_temp.jpg",
+        "name": "Black Widow"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/107617/2643744-phpxmdz9ugl_cv16.jpg",
+        "name": "Simon Baz"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/64959/1282818-lw_t01_001.jpg",
+        "name": "Geo-Force"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/10/100647/3075353-adamstrange.png",
+        "name": "Adam Strange"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/60392/1363167-jesse_7.png",
+        "name": "Jesse Chambers"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/2922124-const_cv1_r1_uoqw558uie_.jpg",
+        "name": "John Constantine"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/6/66125/3447397-1471971_10151978036002488_1810577142_n.jpg",
+        "name": "Blue Marvel"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/33913/723589-capbmi013_cov.jpg",
+        "name": "Captain Britain"
+    },
+    {
+        "image": "http://static.comicvine.com/uploads/scale_small/3/31666/3653922-ironfist2014002-jg-jones-cov-f481e.jpg",
+        "name": "Iron Fist"
+    }
+
+]

@@ -1,0 +1,122 @@
+<style>
+    .results .alert {
+        display: none;
+    }
+
+
+</style>
+
+<script type="text/html" id="testResults">
+    <div class="panel panel-default results" style="position: fixed;bottom:0; right:20px" id="testResultsApp">
+        <div class="panel-heading">
+            <div class="panel-title">Test results:</div>
+        </div>
+        <div class="panel-body" id="resultBody">
+
+            <div class="alert alert-success filter">
+                <b>Yes!</b> Your page does support filtering of ng-repeat!
+            </div>
+            <div class="alert alert-danger filter">
+                <b>Fail!</b> Your page does not filter the ng-repeat!
+            </div>
+
+            <div class="alert alert-success input">
+                <b>Yes!</b> Your page does have an input field for search
+            </div>
+            <div class="alert alert-danger input">
+                <b>Fail!</b> Your page does not have an input field for search
+            </div>
+
+            <div class="alert alert-danger search">
+                <b>Fail!</b> Your page does not enable full text search
+            </div>
+
+            <div class="alert alert-success search">
+                <p><b>Congratulations!</b> Your have wired your input field to a filter on ng-repeat, making it fully searchable, try it out!</p>
+
+                <p>
+                    You have reached AngularJS Superhero Level of : <b>Super Ted</b>!
+                </p>
+                <div id="ted"></div>
+
+
+                <p>
+                    Thank you, now <a style="font-size: 120%" href="../forms/forms.html">take me to the next level</a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</script>
+<script>
+
+    (function() {
+
+        var results = document.createElement("div");
+        results.innerHTML = document.querySelector("#testResults").innerHTML;
+        document.body.appendChild(results)
+
+        function fail(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "block";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "none";
+            }
+        }
+
+        function success(name) {
+            var f = document.querySelector(".alert-danger." + name);
+            if(f) {
+                f.style.display = "none";
+            }
+            var s = document.querySelector(".alert-success." + name);
+            if(s) {
+                s.style.display = "block";
+            }
+        }
+
+        var scope = angular.element(document.querySelector("*[ng-repeat]")).scope();
+
+        //console.log("Scope is: " + (scope.heroes instanceof Array));
+
+        var filter = document.querySelector("*[ng-repeat]").getAttribute("ng-repeat");
+
+        if(filter.indexOf("|") != -1 && filter.indexOf("filter") != -1){
+            success("filter")
+        } else {
+            fail("filter")
+        }
+
+        var input = document.querySelector("input[ng-model]").getAttribute("ng-model");
+        var start = filter.indexOf(input);
+        var end = filter.indexOf(" ", start + 1)
+        if(end > start){
+            var model = filter.substring(start, end)
+        } else {
+            var model = filter.substring(start)
+        }
+
+        if(input != null) {
+            success("input");
+
+            if(model == input){
+                success("search")
+                var ted = document.querySelector("#ted");
+                if(ted.innerHTML.length ==0) {
+                    ted.innerHTML = '<iframe style="margin: 10px" width="280" height="210" src="//www.youtube.com/embed/UqAksFdiKzo?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+                }
+
+            } else {
+                fail("search")
+            }
+        } else {
+            fail("input")
+        }
+
+    })();
+
+</script>

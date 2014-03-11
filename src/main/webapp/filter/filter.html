@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.1.1/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/superheroes.css">
+    <link rel="stylesheet" href="filter.css">
+</head>
+
+<body ng-app="myApp">
+
+<div class="container" >
+
+
+    <h1>Filters</h1>
+
+    <p>
+        This page uses <code>ng-repeat</code> to fetch and list Superheros from a JSON source, while this is super,
+        being able to conduct a full text search upon the list for favorite superhero would be amazing!</p>
+    <p>
+        The goal here is to use the  <a href="http://docs.angularjs.org/api/ng/filter/filter" target="_blank"> default
+        filter</a> functions in AngularJS to search for your favorite Superheros. After that you will try to create your
+        own filter.
+    </p>
+
+    <p class="alert alert-success">
+        Hint: Check out Angular's <a target="_blank" href="http://docs.angularjs.org/tutorial/step_03">Filtering Repeaters</a> demo for filters usage tips!
+    </p>
+
+    <ul class="herolist" ng-controller="HeroesController" >
+        <li ng-repeat="hero in heroes">
+            <img src="{{hero.image}}">
+            <h3>{{hero.name}}</h3>
+        </li>
+    </ul>
+
+    <ul>
+    </ul>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+<script src="filter.js"></script>
+
+
+</body>
+</html>
