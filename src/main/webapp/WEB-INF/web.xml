@@ -5,5 +5,10 @@
          version="3.0">
 
 
+    <!-- Disable files being locked on Windows -->
+    <context-param>
+        <param-name>org.eclipse.jetty.servlet.Default.useFileMappedBuffer</param-name>
+        <param-value>false</param-value>
+    </context-param>
 
 </web-app>
