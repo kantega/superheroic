@@ -30,3 +30,9 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-text-stroke-color: orange
 
 }
+
+.logo {
+    text-align: right;
+    background-image: url('forside-topp.jpg');
+    padding: 10px;
+}
