@@ -1,37 +1,17 @@
 angular.module("myApp", [])
     .directive("crossFade", function() {
         return {
-            restrict: 'A',
-            template: "<div ng-transclude></div>",
+            restrict: 'A', // Directive is matched
             transclude:true,
+            template: "<div ng-transclude></div>", // "transclude" means something like "put the content I'm wrapping here"
 
             link: function (scope, elem, attrs) {
 
-                console.log("Linking: " + elem)
+                // Add Javascript which initially sets style.opacity of all imaged to 0,
+                // then to 1 for the duration of the currently active image
+                // Feel free to steal the code from directives.html and use that as a starting point.
 
-                var images = elem.find("img");
 
-                var current = 0;
-
-                for(var i = 0; i < images.length; i++) {
-                    images[i].style.opacity = i == 0 ? 1 : 0;
-                }
-
-                function advance() {
-
-                    images[current].style.opacity = 0;
-
-                    current++;
-                    if(current == images.length) {
-                        current = 0;
-                    }
-
-                    images[current].style.opacity = 1;
-
-                    setTimeout(advance, 1000);
-                }
-
-                setTimeout(advance, 1000);
             }
         }
     })

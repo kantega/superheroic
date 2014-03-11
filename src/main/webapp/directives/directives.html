@@ -15,14 +15,80 @@
 
     <h1>Directives</h1>
 
+    <p>
+        Directives is how AngularJS extends HTML. You've already used directives such as
+        <code>ng-model</code>, <code>ng-repeat</code> and <code>ng-show</code>.
+        Angular also lets you create your own custom directives.
+    </p>
 
-    <div class="cross-fade" cross-fade>
+    <p>
+        This page contains a gallery of superheroes with each image cross-fading into the next.
+        The transition is implemented using CSS3 a <code>transition</code>, while the logic triggering
+        transitions is done in Javascript.
+    </p>
+
+    <p>
+        Your goal is to create a <code>cross-fade</code> directive which when added to a div will make
+        each child img cross fade.
+    </p>
+
+    <p class="alert alert-success">
+        Hint: Building directives can be a bit complicated.  We've given you a head start by creating an "empty"
+        directive in <code>directives.js</code>. You need to complete the <code>link</code> function.
+    </p>
+
+    <p class="alert alert-success">
+        Hint: <a href="http://www.ng-newsletter.com/posts/directives.html">Here's a tutorial</a> describing how to build a custom directive.
+        You can also check out <a href="http://docs.angularjs.org/guide/directive">Angular's Directive Guide</a>.
+    </p>
+
+    <p class="alert alert-success">
+        Hint: You can reuse much of the code in the <code>script</code> tag below for your link function.
+    </p>
+
+    <p class="alert alert-success">
+        Hint: No, we will not give you any more hints :-) Start hacking!
+    </p>
+
+<pre>&lt;div <span style="background-color: lightgreen">cross-fade</span> class="cross-fade" cross-duration="2000"&gt;
+    &lt;img src="1.jpg"&gt;
+    &lt;img src="2.jpg"&gt;
+&lt;/div&gt;</pre>
+
+
+    <div class="cross-fade">
         <img src="http://static.comicvine.com/uploads/scale_small/6/66303/2961034-screen+shot+2013-04-03+at+5.56.06+am.png">
         <img src="http://static.comicvine.com/uploads/scale_small/10/100647/3676525-tumblr_mumn01qjs71rcp7bmo1_1280.jpg">
         <img src="http://static.comicvine.com/uploads/scale_small/11/117763/2800315-tumblr_mgdfl05lr71qiknbco1_1280.jpg">
         <img src="http://static.comicvine.com/uploads/scale_small/11111/111111230/3622971-wonderwoman_02.jpg">
         <img src="http://static.comicvine.com/uploads/scale_small/3/31666/3577908-hulk2014001-cov-var-645e9.jpg">
     </div>
+
+
+    <!-- TODO: Move this code to the directive's link function -->
+    <script>
+        var current = 0;
+
+        function advance() {
+
+            var images = document.querySelectorAll(".cross-fade img");
+
+
+            for(var i = 0; i < images.length; i++) {
+                images[i].style.opacity = i == current ? 1 : 0;
+            }
+
+            current++;
+            if(current == images.length) {
+                current = 0;
+            }
+
+            setTimeout(advance, 1000);
+        }
+
+        setTimeout(advance, 1000);
+    </script>
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
