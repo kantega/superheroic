@@ -14,10 +14,10 @@
         <div class="panel-body" id="resultBody">
 
             <div class="alert alert-success filter">
-                <b>Yes!</b> Your page does support filtering of ng-repeat!
+                <b>Yes!</b> Your page does add filtering to the ng-repeat!
             </div>
             <div class="alert alert-danger filter">
-                <b>Fail!</b> Your page does not filter the ng-repeat!
+                <b>Fail!</b> Your page does add filtering to the ng-repeat!
             </div>
 
             <div class="alert alert-success input">
@@ -28,7 +28,7 @@
             </div>
 
             <div class="alert alert-danger search">
-                <b>Fail!</b> Your page does not enable full text search
+                <b>Fail!</b> Your page does not link filtering to the input field
             </div>
 
             <div class="alert alert-success search">
@@ -85,25 +85,30 @@
 
         var filter = document.querySelector("*[ng-repeat]").getAttribute("ng-repeat");
 
-        if(filter.indexOf("|") != -1 && filter.indexOf("filter") != -1){
+        if(filter != null && filter.indexOf("|") != -1 && filter.indexOf("filter") != -1){
             success("filter")
         } else {
             fail("filter")
         }
 
-        var input = document.querySelector("input[ng-model]").getAttribute("ng-model");
-        var start = filter.indexOf(input);
-        var end = filter.indexOf(" ", start + 1)
-        if(end > start){
-            var model = filter.substring(start, end)
-        } else {
-            var model = filter.substring(start)
-        }
+        var input = document.querySelector("input[ng-model]");
 
         if(input != null) {
+            var inputModel = input.getAttribute("ng-model");
+            if(inputModel != null){
+
+            }
             success("input");
 
-            if(model == input){
+            var start = filter.indexOf(inputModel);
+            var end = filter.indexOf(" ", start + 1)
+            if(end > start){
+                var filterModel = filter.substring(start, end)
+            } else {
+                var filterModel = filter.substring(start)
+            }
+
+            if(filterModel == inputModel){
                 success("search")
                 var ted = document.querySelector("#ted");
                 if(ted.innerHTML.length ==0) {
