@@ -10,6 +10,11 @@
 * JVM 7.x
 * A decent IDE, like IDEA, Eclipse
 
+## Get it ##
+
+        git clone https://github.com/kantega/superheroic.git
+
+or download the [ZIP](https://github.com/kantega/superheroic/archive/master.zip).
 
 ## Usage ##
 
