@@ -96,7 +96,7 @@
                                 if( requests.length == 1 ) {
                                     success("http")
 
-                                    if(config.url !== "superheroes.json") {
+                                    if(config.url !== "superheroes.json" && config.url !== "/http/superheroes.json") {
                                         fail("wrongurl");
                                     }
 
