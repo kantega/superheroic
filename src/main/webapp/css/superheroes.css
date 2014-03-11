@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Bangers);
-@import url(http://fonts.googleapis.com/css?family=Boogaloo);
 
 html {
     min-height: 100%;
@@ -22,9 +21,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Bangers', cursive;
-}
-p, div {
-    font-family: 'Boogaloo', cursive;
 }
 
 .extruded {
