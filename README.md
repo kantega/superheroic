@@ -60,3 +60,17 @@ __Eclipse & Maven__
         Under Base directory -> Browser Workspace -> Select superheroic
         Write 'install jetty:run' in Goals -> Run
         Access application with browser on http://localhost:8080
+
+
+__Java 6?__
+
+Use Jetty 7:
+<configuration>
+    <connectors>
+        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+            <port>8080</port>
+            <maxIdleTime>60000</maxIdleTime>
+            <headerBufferSize>161920</headerBufferSize>
+        </connector>
+    </connectors>
+</configuration>
