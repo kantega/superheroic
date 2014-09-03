@@ -1,22 +1,22 @@
-apply plugin: 'jettyEclipse'
-
-jettyEclipse {
-    rebuildSkipTasks = [test]
-    rebuildIntervalInSeconds = 10
-    automaticReload = true
-}
-
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
+
     dependencies {
-        classpath (group: 'com.sahlbach.gradle', name: 'gradle-jetty-eclipse-plugin', version: '1.9.+')
+        classpath 'org.akhikhl.gretty:gretty:+'
     }
 }
 
 repositories {
     mavenCentral()
+}
+
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+gretty {
+    contextPath = '/'
 }
 
 dependencies {

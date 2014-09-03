@@ -26,10 +26,9 @@ __Maven__
 
 __Gradle__
 
-        (Linux/Mac) ./gradlew
-        (Windows)   gradlew.bat
 
-        gradle jettyEclipseRun
+        gradlew(.bat) build
+        gradlew(.bat) jettyRunWar 
 
 __IntelliJ IDEA & Maven__
 
