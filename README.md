@@ -7,7 +7,7 @@
 ## Requirements ##
 
 * Git 1.7.10+
-* Apache Maven 3.x || Eclipse || Gradle 1.11
+* Apache Maven 3.x || Eclipse || Gradle 2.0
 * JVM 7.x
 * A decent IDE, like IDEA, Eclipse
 
